@@ -21,7 +21,6 @@ class _CalculatorState extends State<Calculator> {
         backgroundColor: Colors.black,
         body: SafeArea(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Expanded(
                 child: Container(
@@ -51,41 +50,56 @@ class _CalculatorState extends State<Calculator> {
               ),
               Container(
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Button(word: 'AC'),
-                    Button(word: 'C'),
-                    Button(word: '+/-'),
-                    Button(word: '/'),
+                    button(word: 'AC'),
+                    button(word: 'C'),
+                    button(word: '%'),
+                    button(word: '/',value: 1),
                   ],
                 ),
               ),
               Container(
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Button(word: '7'),
-                    Button(word: '8'),
-                    Button(word: '9'),
-                    Button(word: '/'),
+                    button(word: '7'),
+                    button(word: '8'),
+                    button(word: '9'),
+                    button(word: 'x',value: 1),
                   ],
                 ),
               ),
               Container(
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Button(word: '4'),
-                    Button(word: '5'),
-                    Button(word: '6'),
-                    Button(word: '/'),
+                    button(word: '4'),
+                    button(word: '5'),
+                    button(word: '6'),
+                    button(word: '-',value: 1),
                   ],
                 ),
               ),
               Container(
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Button(word: '1'),
-                    Button(word: '2'),
-                    Button(word: '3'),
-                    Button(word: '/'),
+                    button(word: '1'),
+                    button(word: '2'),
+                    button(word: '3'),
+                    button(word: '+',value: 1),
+                  ],
+                ),
+              ),
+              Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    button(word: '.'),
+                    button(word: '0'),
+                    button(word: 'DEL'),
+                    button(word: '=',value: 1),
                   ],
                 ),
               ),
@@ -97,18 +111,19 @@ class _CalculatorState extends State<Calculator> {
   }
 }
 
-class Button extends StatelessWidget {
-  Button({this.word});
-  final String word;
-
-  @override
-  Widget build(BuildContext context) {
-    return FlatButton(
+Widget button({String word,int value}) {
+  Color col=Colors.black;
+  if(value==1)
+    col=Colors.teal;
+  return Expanded(
+    child: FlatButton(
+      padding: EdgeInsets.all(20),
+      color: col,
       onPressed: () {},
       child: Text(
         word,
-        style: TextStyle(color: Colors.white, fontSize: 30),
+        style: TextStyle(color: Colors.white, fontSize: 25),
       ),
-    );
-  }
+    ),
+  );
 }
