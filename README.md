@@ -3,7 +3,13 @@
 A simple calculator app built using Flutter.It performs basic functionalities like addition , subtraction , multiplication and division.It has a minimalistic UI.
 
 ## UI
+<div>
+<img src="https://github.com/advaith-unnikrishnan/calculator/blob/master/images/shot1.png" width=250px padding=20px>
 
+<img src="https://github.com/advaith-unnikrishnan/calculator/blob/master/images/shot2.png" width=250px padding=20px>
+
+<img src="https://github.com/advaith-unnikrishnan/calculator/blob/master/images/shot3.png" width=250px padding=20px>
+</div>
 
 
 ## Getting Started
