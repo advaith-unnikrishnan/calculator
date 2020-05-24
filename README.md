@@ -4,11 +4,11 @@ A simple calculator app built using Flutter.It performs basic functionalities li
 
 ## UI
 <div>
-<img src="https://github.com/advaith-unnikrishnan/calculator/blob/master/images/shot1.png" width=250px padding=20px>
+<img src="https://github.com/advaith-unnikrishnan/calculator/blob/master/images/shot1.png" width=250px padding=40px>
 
-<img src="https://github.com/advaith-unnikrishnan/calculator/blob/master/images/shot2.png" width=250px padding=20px>
+<img src="https://github.com/advaith-unnikrishnan/calculator/blob/master/images/shot2.png" width=250px padding=40px>
 
-<img src="https://github.com/advaith-unnikrishnan/calculator/blob/master/images/shot3.png" width=250px padding=20px>
+<img src="https://github.com/advaith-unnikrishnan/calculator/blob/master/images/shot3.png" width=250px padding=40px>
 </div>
 
 
