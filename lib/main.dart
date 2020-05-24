@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,9 +12,9 @@ class Calculator extends StatefulWidget {
 
 class _CalculatorState extends State<Calculator> {
 
-  var num1=0.0,num2=0.0;
-  String out1='0',out2='0',prev='',operand='';
-  buttonPressed(String txt){
+  /*var num1=0.0,num2=0.0,flag=0;
+  String out1='0',out2='0',prev='',operand='';*/
+  /*buttonPressed(String txt){
     if(txt=='AC'){
       num1=0.0;num2=0.0;
       prev='';operand='';
@@ -77,6 +79,7 @@ class _CalculatorState extends State<Calculator> {
       operand='';
       setState(() {
         out2=out1;
+        flag=1;
       });
     }
     else if(txt=='.'){
@@ -94,10 +97,82 @@ class _CalculatorState extends State<Calculator> {
       prev+=txt;
     }
     setState(() {
-      out2=num1.toStringAsFixed(2);
+        out2=num1.toStringAsFixed(2);
+  });
+}*/
+
+  double num1=0.0,num2=0.0;
+  String output='0',_output='0',opr,a='';
+  bool flag;
+  buttonPressed(String txt){
+    if(txt=='AC'){
+      a='';
+      _output='0';
+      output='0';
+      num1=0;
+      num2=0;
+    }
+    else if(txt=='C'){
+      _output='0';
+      a='0';
+    }
+    else if(txt=='+'||txt=='-'||txt=='*'||txt=='/'||txt=='%'){
+      if(flag==false){
+        num2=double.parse(output);
+        if(opr=='+')
+          output=(num1+num2).toString();
+        else if(opr=='-')
+          output=(num1-num2).toString();
+        else if(opr=='*')
+          output=(num1*num2).toString();
+        else if(opr=='/')
+          output=(num1/num2).toString();
+        else if(opr=='%')
+          output=(num1%num2).toString();
+        num1=0;
+        num2=0;
+      }
+      num1=double.parse(output);
+      a+=txt;
+      opr=txt;
+      _output='0';
+    }
+    else if(txt=='.'){
+      if(_output.contains('.'))
+        print('Already exists');
+      else{
+        _output+=txt;
+        a+=txt;
+      }
+
+    }
+    else if(txt=='='){
+      num2=double.parse(output);
+      if(opr=='+')
+        _output=(num1+num2).toString();
+      else if(opr=='-')
+        _output=(num1-num2).toString();
+      else if(opr=='*')
+        _output=(num1*num2).toString();
+      else if(opr=='/')
+        _output=(num1/num2).toString();
+      else if(opr=='%')
+        _output=(num1%num2).toString();
+      num2=0;
+      num1=0;
+    }
+    else if(txt=='DEL'){
+      _output=_output.substring(0,_output.length-1);
+      a=a.substring(0,a.length-1);
+    }
+    else{
+      _output+=txt;
+      a+=txt;
+    }
+    setState(() {
+      output=double.parse(_output).toStringAsFixed(2);
     });
   }
-
 
 
   Widget button({String word,int value}) {
@@ -136,7 +211,7 @@ class _CalculatorState extends State<Calculator> {
                 child: Container(
                   color: Colors.white,
                   child: Text(
-                    prev,
+                    a,
                     textAlign: TextAlign.end,
                     style: TextStyle(
                       color: Colors.blueAccent,
@@ -149,7 +224,7 @@ class _CalculatorState extends State<Calculator> {
                 child: Container(
                   color: Colors.white,
                   child: Text(
-                    out2,
+                    output,
                     textAlign: TextAlign.end,
                     style: TextStyle(
                       color: Colors.blueAccent,
