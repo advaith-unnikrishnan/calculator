@@ -1,6 +1,10 @@
 # Calculator
 
-A simple calculator built using Flutter.It performs basic functionalities like addition , subtraction , multiplication and division.
+A simple calculator app built using Flutter.It performs basic functionalities like addition , subtraction , multiplication and division.It has a minimalistic UI.
+
+## UI
+
+
 
 ## Getting Started
 
