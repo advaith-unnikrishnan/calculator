@@ -100,7 +100,7 @@ class _CalculatorState extends State<Calculator> {
         onPressed: ()=>buttonPressed(word),
         child: Text(
           word,
-          style: TextStyle(color: col2, fontSize: 25),
+          style: TextStyle(color: col2, fontSize: 28),
         ),
       ),
     );
