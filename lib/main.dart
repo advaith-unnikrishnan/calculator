@@ -11,7 +11,7 @@ class Calculator extends StatefulWidget {
 class _CalculatorState extends State<Calculator> {
 
   double num1=0.0,num2=0.0;
-  String output='0',_output='0',opr,a='';
+  String output='0',_output='0',opr,a='0';
   bool flag;
   buttonPressed(String txt){
     if(txt=='AC'){
