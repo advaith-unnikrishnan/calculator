@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -87,12 +85,10 @@ class _CalculatorState extends State<Calculator> {
 
 
   Widget button({String word,int value}) {
-    Color col1=Colors.white;
-    Color col2=Colors.blueAccent;
-    if(value==1) {
-      col1 = Colors.blueAccent;
-      col2 = Colors.white;
-    }
+
+      Color col1 = Color(0xff000000);
+      Color col2 = Color(0xffE91E63);
+
     return Expanded(
       child: FlatButton(
         padding: EdgeInsets.all(20),
@@ -111,21 +107,21 @@ class _CalculatorState extends State<Calculator> {
       home: Scaffold(
         appBar: AppBar(
           title: Text('Calculator'),
-          backgroundColor: Colors.blueAccent,
+          backgroundColor: Color(0xffE91E63),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xff000000),
         body: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Expanded(
                 child: Container(
-                  color: Colors.white,
+                  color: Color(0xffE91E63),
                   child: Text(
                     a,
                     textAlign: TextAlign.end,
                     style: TextStyle(
-                      color: Colors.blueAccent,
+                      color: Colors.white,
                       fontSize: 50,
                     ),
                   ),
@@ -133,12 +129,12 @@ class _CalculatorState extends State<Calculator> {
               ),
               Expanded(
                 child: Container(
-                  color: Colors.white,
+                  color: Color(0xffE91E63),
                   child: Text(
                     output,
                     textAlign: TextAlign.end,
                     style: TextStyle(
-                      color: Colors.blueAccent,
+                      color: Colors.white,
                       fontSize: 50,
                     ),
                   ),
